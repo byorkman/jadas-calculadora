@@ -1,0 +1,86 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1c2430;
+  --muted: #5b6676;
+  --border: #d9dee5;
+  --accent: #2f6fdb;
+  --inactiva: #1e8e5a;
+  --baja: #6a9a1f;
+  --moderada: #c98a00;
+  --alta: #c4382f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c;
+    --card: #1b212a;
+    --text: #e7ebf0;
+    --muted: #9aa5b4;
+    --border: #2d3540;
+    --accent: #6c9cf0;
+    --inactiva: #3fbf83;
+    --baja: #9ccc4a;
+    --moderada: #f0b429;
+    --alta: #ef6a60;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 560px; margin: 0 auto; padding: 16px; }
+h1 { margin: 8px 0 0; font-size: 1.6rem; }
+.sub { margin: 0 0 16px; color: var(--muted); }
+form, .tarjeta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+form { padding: 16px; display: grid; gap: 18px; }
+fieldset { border: 0; margin: 0; padding: 0; }
+legend, .campo > label { font-weight: 600; margin-bottom: 6px; display: block; }
+.rango { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.segmented { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.segmented label { flex: 1; text-align: center; padding: 8px 4px; cursor: pointer; font-size: .95rem; }
+.segmented label + label { border-left: 1px solid var(--border); }
+.segmented input { position: absolute; opacity: 0; pointer-events: none; }
+.segmented label:has(input:checked) { background: var(--accent); color: #fff; }
+.segmented label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: -4px; }
+details { margin-top: 8px; color: var(--muted); font-size: .9rem; }
+details ul { margin: 6px 0 0; padding-left: 20px; }
+.slider { display: flex; align-items: center; gap: 12px; }
+.slider input { flex: 1; accent-color: var(--accent); }
+.slider output { min-width: 2.5ch; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+input[type="number"] {
+  width: 100%; padding: 10px 12px; font: inherit; color: inherit;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+}
+.stepper { display: flex; gap: 8px; }
+.stepper input { text-align: center; }
+.stepper button {
+  width: 48px; flex: none; font-size: 1.3rem; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg); color: inherit; cursor: pointer;
+}
+#resultado { display: grid; gap: 12px; margin-top: 16px; }
+.tarjeta { padding: 14px 16px; border-left-width: 6px; }
+.tarjeta.inactiva { border-left-color: var(--inactiva); }
+.tarjeta.baja { border-left-color: var(--baja); }
+.tarjeta.moderada { border-left-color: var(--moderada); }
+.tarjeta.alta { border-left-color: var(--alta); }
+.tarjeta .titulo { color: var(--muted); font-size: .9rem; }
+.tarjeta .puntaje { font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tarjeta .puntaje span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+.tarjeta.inactiva .categoria { color: var(--inactiva); }
+.tarjeta.baja .categoria { color: var(--baja); }
+.tarjeta.moderada .categoria { color: var(--moderada); }
+.tarjeta.alta .categoria { color: var(--alta); }
+.tarjeta .categoria { font-weight: 600; }
+.tarjeta.sin-corte .categoria { color: var(--muted); font-weight: 400; font-size: .9rem; }
+.detalle { margin: 0; color: var(--muted); font-size: .85rem; }
+.error { color: var(--alta); margin: 0; }
+footer { margin-top: 24px; color: var(--muted); font-size: .85rem; }
+footer p { margin: 0 0 6px; }
+.refs { margin-top: 10px !important; }
