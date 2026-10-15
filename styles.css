@@ -84,3 +84,16 @@ input[type="number"] {
 footer { margin-top: 24px; color: var(--muted); font-size: .85rem; }
 footer p { margin: 0 0 6px; }
 .refs { margin-top: 10px !important; }
+
+.portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.portal::before { content: "←"; }
+.portal img { border-radius: 5px; }
+.portal:hover { color: var(--text); }
