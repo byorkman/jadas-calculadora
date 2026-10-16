@@ -97,3 +97,4 @@ footer p { margin: 0 0 6px; }
 .portal::before { content: "←"; }
 .portal img { border-radius: 5px; }
 .portal:hover { color: var(--text); }
+.version { opacity: .75; }
