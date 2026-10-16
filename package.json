@@ -1,6 +1,6 @@
 {
   "name": "jadas-calculadora",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
   "description": "Calculadora de actividad de la artritis idiopática juvenil (JADAS / cJADAS)",
